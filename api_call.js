@@ -1,4 +1,29 @@
 
+function populateTable(data, table_name){
+    var articles = data['search-results']['entry'];
+    var table = document.getElementById(table_name);
+    var tbody = document.createElement("tbody");
+    
+    for (var i = 0, len = articles.length; i < 10; i++) {
+        title = articles[i]['dc:title'];
+        author = articles[i]['dc:creator'];
+        var tr = document.createElement("tr");
+                        
+        var tdTitle = document.createElement("td");
+        var txt = document.createTextNode(title);
+        tdTitle.appendChild(txt);
+
+        var tdAuthor = document.createElement("td");
+        var txt = document.createTextNode(author);
+        tdAuthor.appendChild(txt);
+
+        tr.appendChild(tdTitle);
+        tr.appendChild(tdAuthor);
+        tbody.appendChild(tr);
+        }
+     table.appendChild(tbody)
+}
+
 $(document).ready(function() {
         
         // // dii
@@ -10,16 +35,7 @@ $(document).ready(function() {
             },
             crossDomain: true,
             success: function(result){
-                // result = JSON.parse(result);
-                var articles = result['search-results']['entry'];
-                var table = document.getElementById("dii_table");
-
-                for (var i = 0, len = articles.length; i < 10; i++) {
-                        title = articles[i]['dc:title'];
-                        author = articles[i]['dc:creator'];
-                        new_entry = '<tr><td>' + title + '</td><td>' + author + '</td></tr>';
-                        table.innerHTML += new_entry;
-                }
+                populateTable(result, "dii_table");
             },
             error: function() { alert('Hubo un problema cargando los articulos'); },
             beforeSend: setHeader
@@ -30,15 +46,7 @@ $(document).ready(function() {
             type: 'GET',
             dataType: 'json',
             success: function(result){
-                var articles = result['search-results']['entry'];
-                var table = document.getElementById("mec_table");
-
-                for (var i = 0, len = articles.length; i < 10; i++) {
-                        title = articles[i]['dc:title'];
-                        author = articles[i]['dc:creator'];
-                        new_entry = '<tr><td>' + title + '</td><td>' + author + '</td></tr>';
-                        table.innerHTML += new_entry;
-                }
+                populateTable(result, "mec_table");
             },
             error: function() { alert('Hubo un problema cargando los articulos'); },
             beforeSend: setHeader
@@ -49,15 +57,7 @@ $(document).ready(function() {
             type: 'GET',
             dataType: 'json',
             success: function(result){
-                var articles = result['search-results']['entry'];
-                var table = document.getElementById("mat_table");
-
-                for (var i = 0, len = articles.length; i < 10; i++) {
-                        title = articles[i]['dc:title'];
-                        author = articles[i]['dc:creator'];
-                        new_entry = '<tr><td>' + title + '</td><td>' + author + '</td></tr>';
-                        table.innerHTML += new_entry;
-                }
+                populateTable(result, "mat_table");
             },
             error: function() { alert('Hubo un problema cargando los articulos'); },
             beforeSend: setHeader
@@ -68,15 +68,7 @@ $(document).ready(function() {
             type: 'GET',
             dataType: 'json',
             success: function(result){
-                var articles = result['search-results']['entry'];
-                var table = document.getElementById("met_table");
-
-                for (var i = 0, len = articles.length; i < 10; i++) {
-                        title = articles[i]['dc:title'];
-                        author = articles[i]['dc:creator'];
-                        new_entry = '<tr><td>' + title + '</td><td>' + author + '</td></tr>';
-                        table.innerHTML += new_entry;
-                }
+                populateTable(result, "met_table");
             },
             error: function() { alert('Hubo un problema cargando los articulos'); },
             beforeSend: setHeader
@@ -87,15 +79,7 @@ $(document).ready(function() {
             type: 'GET',
             dataType: 'json',
             success: function(result){
-                var articles = result['search-results']['entry'];
-                var table = document.getElementById("qui_table");
-
-                for (var i = 0, len = articles.length; i < 10; i++) {
-                        title = articles[i]['dc:title'];
-                        author = articles[i]['dc:creator'];
-                        new_entry = '<tr><td>' + title + '</td><td>' + author + '</td></tr>';
-                        table.innerHTML += new_entry;
-                }
+                populateTable(result, "qui_table");
             },
             error: function() { alert('Hubo un problema cargando los articulos'); },
             beforeSend: setHeader
@@ -106,15 +90,7 @@ $(document).ready(function() {
             type: 'GET',
             dataType: 'json',
             success: function(result){
-                var articles = result['search-results']['entry'];
-                var table = document.getElementById("inf_table");
-
-                for (var i = 0, len = articles.length; i < 10; i++) {
-                        title = articles[i]['dc:title'];
-                        author = articles[i]['dc:creator'];
-                        new_entry = '<tr><td>' + title + '</td><td>' + author + '</td></tr>';
-                        table.innerHTML += new_entry;
-                }
+                populateTable(result, "dic_table");
             },
             error: function() { alert('Hubo un problema cargando los articulos'); },
             beforeSend: setHeader
@@ -125,15 +101,7 @@ $(document).ready(function() {
             type: 'GET',
             dataType: 'json',
             success: function(result){
-                var articles = result['search-results']['entry'];
-                var table = document.getElementById("die_table");
-
-                for (var i = 0, len = articles.length; i < 10; i++) {
-                        title = articles[i]['dc:title'];
-                        author = articles[i]['dc:creator'];
-                        new_entry = '<tr><td>' + title + '</td><td>' + author + '</td></tr>';
-                        table.innerHTML += new_entry;
-                }
+                populateTable(result, "die_table");
             },
             error: function() { alert('Hubo un problema cargando los articulos'); },
             beforeSend: setHeader
@@ -144,15 +112,7 @@ $(document).ready(function() {
             type: 'GET',
             dataType: 'json',
             success: function(result){
-                var articles = result['search-results']['entry'];
-                var table = document.getElementById("civ_table");
-
-                for (var i = 0, len = articles.length; i < 10; i++) {
-                        title = articles[i]['dc:title'];
-                        author = articles[i]['dc:creator'];
-                        new_entry = '<tr><td>' + title + '</td><td>' + author + '</td></tr>';
-                        table.innerHTML += new_entry;
-                }
+                populateTable(result, "civ_table");
             },
             error: function() { alert('Hubo un problema cargando los articulos'); },
             beforeSend: setHeader
@@ -163,16 +123,7 @@ $(document).ready(function() {
             type: 'GET',
             dataType: 'json',
             success: function(result){
-                var articles = result['search-results']['entry'];
-                var table = document.getElementById("fi_table");
-
-                for (var i = 0, len = articles.length; i < 10; i++) {
-                        title = articles[i]['dc:title'];
-                        author = articles[i]['dc:creator'];
-                        // console.log(title + ' ' + author);
-                        new_entry = '<tr><td>' + title + '</td><td>' + author + '</td></tr>';
-                        table.innerHTML += new_entry;
-                }
+                populateTable(result, "fi_table");
             },
             error: function() { alert('Hubo un problema cargando los articulos'); },
             beforeSend: setHeader
@@ -180,22 +131,6 @@ $(document).ready(function() {
       });
 
       function setHeader(xhr) {
-        // xhr.setRequestHeader('X-ELS-APIKey', '936675bebed0ab4c03bd107785703f5c');
         xhr.setRequestHeader('Accept', 'application/json');
         xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
       }
-
-
-function gotAjaxResponse(result,table){
-    
-    var articles = result['search-results']['entry'];
-    var dii_table = document.getElementById("dii_table");
-
-    for (var i = 0, len = articles.length; i < 10; i++) {
-            title = articles[i]['dc:title'];
-            author = articles[i]['dc:creator'];
-            // console.log(title + ' ' + author);
-            new_entry = '<tr><td>' + title + '</td><td>' + author + '</td></tr>';
-            table.innerHTML += new_entry;
-    }
-}

@@ -7,24 +7,7 @@
   <title>The HTML5 Herald</title>
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint">
-  <style>
-    table {
-        font-family: arial, sans-serif;
-        font-size: 12px;
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
-
-    tr:nth-child(even) {
-        background-color: #dddddd;
-    }
-    </style>
+  <link rel="stylesheet" type="text/css" href="articles_tables.css">
 
 </head>
 
@@ -32,14 +15,16 @@
     <!-- <link href="http://www.scopus.com/inward/citedby.url?partnerID=HzOxMe3b&amp;scp=79960866967" ref="scopus-citedby"/> -->
     <p id="demo"></p>
     <h3>Departamento de Ingenieria Civil Industrial</h3>
-    <table id="dii_table">
-      <tr>
-        <th>Article</th>
-        <th>Author</th>
-        <!-- <th>Country</th> -->
-      </tr>
-      </tr>
-    </table>
+    <div style="overflow-x:auto;">
+      <table id="dii_table" class="articles_table">
+        <thead>
+          <tr>
+            <th>Article</th>
+            <th>Author</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
 
     <h3>Departamento de Ingenieria Civil Mecanica</h3>
     <table id="mec_table">
@@ -82,7 +67,7 @@
     </table>
     
     <h3>Departamento de Ingenieria Civil Informatica</h3>
-    <table id="inf_table">
+    <table id="dic_table">
       <tr>
         <th>Article</th>
         <th>Author</th>
@@ -112,7 +97,7 @@
     </table>
     
     <h3>Facultad de Ingeneria</h3>
-    <table id="fi_table">
+    <table id="fi_table" class="articles_table">
       <tr>
         <th>Article</th>
         <th>Author</th>
