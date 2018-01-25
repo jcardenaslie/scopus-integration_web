@@ -1,10 +1,13 @@
     table[class^="articles_table"] {
-        width: 500px;
-        height: 100px;
+        /*width: 300px;*/
+        width: 100%;
+        /*height: 70px;*/
+        height: 100%;
         border-collapse: collapse;
         font-family: 'roboto', sans-serif;
-        font-size: 9px;
-        background-color: grey
+        font-size: 11px;
+        background-color: #b9b9b9;
+        font-weight: bold;
     }
     table[class^="articles_table"] tbody {
         height: 100px;
@@ -13,6 +16,7 @@
     table[class^="articles_table"] th{
         border: 0px solid black;
         color: #1b457b;
+        font-size: 13px;
     }
 
     table[class^="articles_table"] td {
@@ -21,11 +25,16 @@
     }
     table[class^="articles_table"] td, table[class^="articles_table"] th {
         border: 0px solid #dddddd;
-        padding: 10px 15px 0px 5px;
-        text-align: left;
-        background: transparent
-    }
+        border-bottom: 1px solid white;
 
+        padding: 10px 15px 10px 5px;
+        text-align: left;
+        background: transparent;
+    }
+    
+    .height-fix {
+        height: 94%;
+    }
     /*tr:nth-child(even) {background-color: #f2f2f2;}
 */
     table[class^="articles_table"] tr:hover, table[class^="articles_table"] td:hover {background-color: #f5f5f5; color: black;}

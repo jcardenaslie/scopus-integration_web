@@ -26,5 +26,5 @@
     echo $scraped_website;
     
    //  $someArray = json_encode($scraped_website, true);
-  	// print_r($someArray);   
+  	// echo $someArray;   
 ?>
