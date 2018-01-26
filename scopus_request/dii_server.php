@@ -46,11 +46,11 @@
 
         $myObj->publisher = $responseArticleArray['abstracts-retrieval-response']['coredata']['dc:publisher'];
         
-        $authors = $responseArticleArray['abstracts-retrieval-response']['authors']['author']; 
+        $article_authors = $responseArticleArray['abstracts-retrieval-response']['authors']['author']; 
         $authors_array = array();
 
-        for($j = 0; $j < sizeof($authors); $j++){
-            array_push($authors_array,$author['ce:indexed-name']);    
+        for($j = 0; $j < sizeof($article_authors); $j++){
+            array_push($authors_array,$article_authors[$j]['ce:indexed-name']);    
         }
 
         

@@ -43,6 +43,8 @@
     table[class^="articles_table"] strong 
     {color: #444444;list-style-type: none;}
 
+    table[class^="articles_table"] p
+    {margin: 2px 0px 2px 0px}
     table[class^="articles_table"] p.article_publisher
     {display: inline;}
     table[class^="articles_table"] p.article_year

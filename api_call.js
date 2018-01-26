@@ -19,7 +19,7 @@ function populateTable3(data, table_name){
         }
 
         text = 
-            '<p><strong>TITULO: </strong><a href="' + data[i]['scopus_link'] + '">' + data[i]['title'] + '</a></p>' +
+            '<p><strong>TITULO: </strong><a target="_blank" href="' + data[i]['scopus_link'] + '">' + data[i]['title'] + '</a></p>' +
             '<p><strong>AUTORES: </strong>'+ authorsTxt + '</p>' +
             '<p class="article_publisher"><strong>EDITOR: </strong>' + data[i]['publisher'] + '</p>' +
             '<p class="article_year"><strong>AÑO: </strong>' + data[i]['cover_date'] + '</p>';
@@ -33,6 +33,7 @@ function populateTable3(data, table_name){
     table.appendChild(tbody)
 }
 
+
 $(document).ready(function() {
         
         // dii
@@ -44,7 +45,8 @@ $(document).ready(function() {
         //     },
         //     crossDomain: true,
         //     success: function(result){
-        //         populateTable2(result, "dii_table");
+        //         console.log(result);
+        //         populateTable3(result, "dii_table");
         //     },
         //     error: function() { alert('Hubo un problema cargando los articulos'); },
         //     beforeSend: setHeader
