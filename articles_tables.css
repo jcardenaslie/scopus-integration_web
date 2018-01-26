@@ -1,18 +1,18 @@
     table[class^="articles_table"] {
-        /*width: 300px;*/
         width: 100%;
-        /*height: 70px;*/
         height: 100%;
         border-collapse: collapse;
         font-family: 'roboto', sans-serif;
         font-size: 11px;
         background-color: #b9b9b9;
-        font-weight: bold;
+        /*font-weight: bold;*/
     }
+    
     table[class^="articles_table"] tbody {
         height: 100px;
         overflow-y: auto;
     }
+    
     table[class^="articles_table"] th{
         border: 0px solid black;
         color: #1b457b;
@@ -21,20 +21,35 @@
 
     table[class^="articles_table"] td {
         border: 0px solid black;
-        color: white;
+        color: #f4f4f4;
     }
-    table[class^="articles_table"] td, table[class^="articles_table"] th {
+    
+    table[class^="articles_table"] td, 
+    table[class^="articles_table"] th {
         border: 0px solid #dddddd;
         border-bottom: 1px solid white;
-
         padding: 10px 15px 10px 5px;
         text-align: left;
         background: transparent;
     }
     
-    .height-fix {
-        height: 94%;
-    }
-    /*tr:nth-child(even) {background-color: #f2f2f2;}
-*/
-    table[class^="articles_table"] tr:hover, table[class^="articles_table"] td:hover {background-color: #f5f5f5; color: black;}
+    .height-fix 
+    {height: 94%;}
+
+    table[class^="articles_table"] tr:hover, 
+    table[class^="articles_table"] td:hover 
+    {background-color: #f5f5f5; color: black;}
+
+    table[class^="articles_table"] strong 
+    {color: #444444;list-style-type: none;}
+
+    table[class^="articles_table"] p.article_publisher
+    {display: inline;}
+    table[class^="articles_table"] p.article_year
+    {display: inline;margin-left: 20px}
+    
+    table[class^="articles_table"] a
+    {color:#156899;}
+
+    table[class^="articles_table"] a:visited 
+    {color:#0c4363;}
